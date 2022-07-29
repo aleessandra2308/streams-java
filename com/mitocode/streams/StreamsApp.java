@@ -31,20 +31,26 @@ public class StreamsApp {
     }
 
     public void transformar() {
-
+        //
+        lista.stream().map(String::toUpperCase).forEach(System.out::println);
+        numeros.stream().map(x -> Integer.parseInt(x) +1).forEach(System.out::println);
     }
 
     public void limitar() {
-
+        lista.stream().limit(2).forEach(System.out::println);
     }
 
     public void contar() {
-
+        long x = lista.stream().count();
+        System.out.println(x);
     }
 
     public static void main(String[] args) {
         StreamsApp app = new StreamsApp();
         //app.filtrar();
-        app.ordenar();
+       //sapp.ordenar();
+       //app.transformar();
+       //app.limitar();
+       app.contar();
     }
 }
